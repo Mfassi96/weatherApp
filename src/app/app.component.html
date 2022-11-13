@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body bg-dark">
+                    <form (submit)="submitLocation(cityName)">
+                        <div class="form-group">
+                            <input type="text" name="" class="form-control" placeholder="CityName" #cityName>
+                            <button class="btn btn-success form-control btn-block mt-2">Get Weather</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <!-- <img class="card-img-top" src="holder.js/100x180/" alt="Title"> -->
+                <div *ngIf="weatherInfo" class="card-body px-3">
+                    <h4 class="card-title text-center display-2 ">{{weatherInfo.name}} - {{weatherInfo.sys.country}}</h4>
+                    <hr>
+                    <p>Temp :{{weatherInfo.main.temp}}</p>
+                    <p>{{weatherInfo.weather[0].description}}</p>
+                    <p></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
